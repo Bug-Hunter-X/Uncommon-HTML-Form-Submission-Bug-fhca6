@@ -1,0 +1,14 @@
+<p>The solution involves carefully placing the `preventDefault()` call. To avoid the unexpected form submission, ensure the prevention happens only after all necessary asynchronous operations have completed or after a delay that gives the browser enough time to execute all the commands.</p><pre><code>&lt;form id="myForm"&gt;
+  &lt;input type="text" name="name"&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+document.getElementById('myForm').addEventListener('submit', function(event) {
+  // Simulate an asynchronous operation (replace with your actual AJAX call)
+  setTimeout(function() {
+    console.log('Form submitted!');
+    event.preventDefault(); // Prevent default submission AFTER async operation
+  }, 100); // Simulate delay
+});
+&lt;/script&gt;</code></pre>
