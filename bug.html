@@ -1,0 +1,11 @@
+<p>This is a common error when working with HTML forms, specifically when dealing with the <code>submit</code> event and preventing default behavior. The code may seem correct, but the order of operations can lead to unexpected results.  This example uses Javascript to handle the submit event. The console will log that the form was submitted, but the page does not reload</p><pre><code>&lt;form id="myForm"&gt;
+  &lt;input type="text" name="name"&gt;
+  &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+document.getElementById('myForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent default submission
+  console.log('Form submitted!');
+});
+&lt;/script&gt;</code></pre>
